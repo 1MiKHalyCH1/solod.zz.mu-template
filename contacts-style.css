@@ -1,0 +1,21 @@
+#contacts-img {
+	display: block;
+	float: right;
+	width: 45%;
+	min-width: 300px;
+	margin: 10px;
+	/*margin-right: 20%;*/
+	border-radius: 5px;
+	border: 1px solid black;
+	box-shadow: 2px 2px 5px 2px #BBBBBB;
+}
+
+#contacts-href {
+	text-decoration: none;
+	color: black;
+}
+
+.vk {
+	width: 20px;
+	height: 20px;
+}

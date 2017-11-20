@@ -1,0 +1,80 @@
+.support {
+	color: red;
+}
+
+.hide, .hide + label ~ div {
+    display: none; 
+}
+
+.hide:checked + label + div {
+    display: block; 
+    animation: fade linear 0.5s;
+}
+
+label + div {
+	padding: 0 20px;
+	/*transition-property: display;*/
+	/*transition-duration: 0.5s;*/
+	/*transition: display 1s linear;*/
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }   
+}
+
+.hide:checked + label .title {
+	/*background: #E9E9E2;*/
+	/*background: #b0b0f0;*/
+	background: #F1EEE0;
+	padding-left: 30px;
+
+}
+
+.arrow {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	width: 32px;
+	height: 32px;
+	background: url('images/right.png') no-repeat 50% 50%;
+	background-size: 120%;
+	transition-property: transform;
+	transition-duration: 0.5s;
+}
+
+.hide:checked + label .arrow {
+	transform: rotate(90deg);
+	background-size: 120%;
+}
+
+.content .layout-positioner {
+	padding-top: 30px;
+}
+
+article {
+	margin: 0 auto;
+}
+
+.title {
+	line-height: 40px;
+	height: 40px;
+	position: relative;
+	cursor: pointer;
+	padding-left: 10px; 
+	transition-property: padding-left;
+	transition-duration: 1s;
+}
+
+.title:hover {
+	transition: 0.5s;
+	/*background: #E9E9E2;*/
+	/*background: #b0b0f0;*/
+	background: #F1EEE0;
+
+}
+
+.title:not(:hover) {
+	transition: 0.5s;
+}
+

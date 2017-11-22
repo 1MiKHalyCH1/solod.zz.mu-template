@@ -17,14 +17,14 @@ html, body {
 
 .logo-href {
 	display: block;
-	background: url(images/icon.png) no-repeat 50% 50%;
+	background: url(../images/icon.png) no-repeat 50% 50%;
 	width: 35px;
 	height: 35px;
 	background-size: 100%;
 }
 
 .logo-href:hover {
-	background: url(images/icon-hover.png) no-repeat 50% 50%;
+	background: url(../images/icon-hover.png) no-repeat 50% 50%;
 	background-size: 100%;
 }
 

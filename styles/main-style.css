@@ -22,11 +22,19 @@
 	/*border-radius: 2px;*/
 	/*border: 1px solid lightgray;*/
 	/*box-shadow: 2px 2px 1px 1px lightgray;*/
+	transition-property: background;
+	transition-duration: 0.5s;
 }
 
 .cell:hover {
 	/*background: #EEF8BF;*/
-	background: #BCF0EF;
+	/*background: #BCF0EF;*/
+	background: #b0b0f0;
+
+}
+
+.cell:not(:hover) {
+	background: #E9E9E2;
 }
 
 .menu-cells .cell .before {

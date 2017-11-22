@@ -37,7 +37,7 @@ to { opacity: 1 }
 	right: 10px;
 	width: 32px;
 	height: 32px;
-	background: url('images/right.png') no-repeat 50% 50%;
+	background: url('../images/right.png') no-repeat 50% 50%;
 	background-size: 120%;
 	transition-property: transform;
 	transition-duration: 0.5s;

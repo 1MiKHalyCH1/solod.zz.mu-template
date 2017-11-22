@@ -1,6 +1,7 @@
 #contacts-img {
 	display: block;
 	float: right;
+	/*height: 80%;*/
 	width: 45%;
 	min-width: 300px;
 	margin: 10px;
@@ -9,6 +10,7 @@
 	border: 1px solid black;
 	box-shadow: 2px 2px 5px 2px #BBBBBB;
 }
+
 
 #contacts-href {
 	text-decoration: none;

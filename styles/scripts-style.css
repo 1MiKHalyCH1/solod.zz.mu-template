@@ -1,0 +1,14 @@
+.content .layout-positioner {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+pre {
+    padding: 10px 50px;
+    color: #333333;
+	background: #F1EEE0;
+    line-height: 120%;
+    border: 1px solid #ac9;
+    border-left: none;
+    border-right: none;
+}

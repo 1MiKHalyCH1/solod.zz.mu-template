@@ -13,8 +13,8 @@
 
 .cell {
 	font-family: 'Open Sans', 'Helvetica', sans-serif;
-	/*font-family: 'Helvetica Neue', Arial, sans-serif;*/
-	font-size: 30px;
+	font-size: calc(100vmax/35);
+	/* font-size: 30px; */
 	font-weight: lighter;
 	color: #262626;
 	display: inline-block;
@@ -34,16 +34,7 @@
 }
 
 .cell:hover {
-	/*background: #EEF8BF;*/
-	/*background: #BCF0EF;*/
 	background: #b0b0f0;
-	/*font-size: 45px;*/
-	/*font-weight: bold;*/
-
-}
-
-.cell:not(:hover) {
-	background: #E9E9E2;
 }
 
 .menu-cells .cell .before {

@@ -122,6 +122,42 @@ footer {
 	font-size: 12px;
 }
 
+#scrollTop {
+    position: fixed;
+    opacity: 0;
+    top: 0px;
+    left: 0;
+    width: 150px;
+    min-height: 100%;
+    /* padding-top: 40px; */
+    /* padding-left: 10px; */
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    font-family: 'Open Sans', 'Helvetica', sans-serif;
+    vertical-align: bottom;
+    /* background: #CCDFEB; */
+    /* background:  #E5EDF6 */
+    
+}
+
+#scrollTop:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#scrollTop #buttonUp {
+    position: fixed;
+    border-radius: 5px;
+    bottom: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    background: url('../images/right.png') no-repeat 50% 50%, #9EBDDC;
+    background-size: 120%;   
+    transform: rotate(-90deg);    
+    opacity: 0.6;
+}
+
 footer > .layout-positioner {
 	border-top: 1px solid lightgray;
 }

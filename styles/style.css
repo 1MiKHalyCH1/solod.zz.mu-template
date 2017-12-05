@@ -18,6 +18,9 @@ html, body {
 	height: 35px;
 	background: url(../images/icon.png) no-repeat 50% 50%;
 	background-size: 100%;
+
+	/*transition-property: background;*/
+	/*transition-duration: 0.3s;*/
 }
 
 .logo:hover {
@@ -55,6 +58,8 @@ html, body {
     font-weight: 100;
     text-decoration: none;
 	/*border: 1px dashed red;*/
+	/*transition-property: color;*/
+	/*transition-duration: 0.5s;*/
 }
 
 .main-menu a:hover {
@@ -74,7 +79,7 @@ header {
 	height: 46px;
 	background: #262626;
 	/*font-family: Helvetica;*/
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', 'Helvetica', sans-serif;
 	color: white;
 }
 

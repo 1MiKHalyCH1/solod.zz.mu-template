@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
+
+.content {
+    position: relative;
+}
+
 .content .layout-positioner {
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -11,4 +18,23 @@ pre {
     border: 1px solid #ac9;
     border-left: none;
     border-right: none;
+}
+
+#scrollTop {
+    /* visibility: hidden; */
+    position: fixed;
+    opacity: 0.5;
+    top: 0px;
+    left: 0;
+    width: 100px;
+    min-height: 100%;
+    /* transition-property: background; */
+    /* transition-duration: 0.2s; */
+    font-family: 'Open Sans', 'Helvetica', sans-serif;
+    vertical-align: bottom;
+}
+
+#scrollTop:hover {
+    /* visibility: visible; */
+    background: #CCDFEB;
 }

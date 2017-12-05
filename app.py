@@ -45,7 +45,8 @@ class MainApplication(Application):
         ]
         settings = {
             "static_path": os.path.join(os.path.dirname(__file__), "static"),
-            "template_path": os.path.join(os.path.dirname(__file__), "templates")
+            "template_path": os.path.join(os.path.dirname(__file__), "templates"),
+            "debug" : True  #TODO: remove before production
         }
         Application.__init__(self, handlers, **settings)
         print('[+] Server started')    

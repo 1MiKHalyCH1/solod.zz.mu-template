@@ -1,5 +1,10 @@
+
 .support {
 	color: red;
+}
+
+h1 {
+	font-weight: normal;
 }
 
 .hide, .hide + label ~ div {
@@ -30,6 +35,10 @@ to { opacity: 1 }
 	padding-left: 30px;
 
 }
+
+/*.hide:checked + label .title h1 {*/
+	/*font-weight: bold;*/
+/*}*/
 
 .arrow {
 	position: absolute;

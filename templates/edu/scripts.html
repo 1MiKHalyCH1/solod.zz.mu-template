@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Solod</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="static/styles/style.css">
-		<link rel="stylesheet" type="text/css" href="static/styles/scripts-style.css">
-		<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+		{% module Template("head_styles.html", style_name="scripts-style") %}			
+		<script type="text/javascript" src="/static/scripts/js-script.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				scrollTop();
+			});
+		</script>
 	</head>
 	<body>
-		<header>
-			<a class="logo" href="/"></a>
-			<div class="layout-positioner">
-				<ul class="main-menu">
-		            <li><a href='/biography'>Биография</a></li>
-		            <li><a href='../publications.html'>Публикация</a></li>
-		            <li><a href='../contacts.html'>Контакты</a></li>
-		        </ul>
-			</div>
-		</header>
+		{% module Template("header.html") %}
 		<div class="content">
 			<article>
+				<div id="scrollTop"></div>
 				<div class="layout-positioner">
 					<!-- Content -->
 
@@ -92,10 +86,6 @@
 				</div>
 			</article>
 		</div>
-		<footer>
-			<div class="layout-positioner">
-				Солодушкин Святослав Игоревич
-			</div>
-		</footer>
+		{% module Template("footer.html") %}
 	</body>
 </html>

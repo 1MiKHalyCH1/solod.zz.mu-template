@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Solod</title>
-		<meta charset="utf-8">
-		
-		<link rel="stylesheet" type="text/css" href="static/styles/style.css">
-		<link rel="stylesheet" type="text/css" href="static/styles/biography-style.css">
-		<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+		{% module Template("head_styles.html", style_name="biography-style") %}
 
 		<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 		<script type="text/javascript" src="static/scripts/biography-script.js"></script>
@@ -17,16 +12,7 @@
 		</script>
 	</head>
 	<body>
-		<header>
-			<a class="logo" href="/"></a>
-			<div class="layout-positioner">
-				<ul class="main-menu">
-		            <li><a href='/biography'>Биография</a></li>
-		            <li><a href='publications.html'>Публикация</a></li>
-		            <li><a href='contacts.html'>Контакты</a></li>
-		        </ul>
-			</div>
-		</header>
+		{% module Template("header.html") %}
 		<div class="content">
 			<article>
 				<div class="layout-positioner">
@@ -148,10 +134,6 @@
 				</div>
 			</article>
 		</div>
-		<footer>
-			<div class="layout-positioner">
-				Солодушкин Святослав Игоревич
-			</div>
-		</footer>
+		{% module Template("footer.html") %}
 	</body>
 </html>

@@ -20,6 +20,14 @@
 	transition-property: padding-left;
 	transition-duration: .5s;
 	color: black !important;
+	height: 40px !important;
+	/* font-size: 60px !important; */
+	/* line-height: 40px !important; */
+	/* padding-top: 3px !important; */
+}
+
+.panel-title {
+	font-size: 20px !important;
 }
 
 .panel-heading:hover {
@@ -36,4 +44,12 @@
 
 main .layout-positioner {
 	padding-top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+	.layout-positioner {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		
+	}
 }

@@ -43,3 +43,9 @@ main .layout-positioner {
 	background-size: 120%;	
 	opacity: 0.9;
 }
+
+@media only screen and (max-width: 768px) {
+	.layout-positioner {
+		padding-top: 5px !important;
+	}
+}

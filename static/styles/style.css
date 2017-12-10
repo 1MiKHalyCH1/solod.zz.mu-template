@@ -6,15 +6,11 @@ html, body {
 	height: 100%;
 }
 
-
-
 .layout-positioner {
 	width: 65%;
 	height: 100%;
 	margin: 0 auto;
 }
-
-
 
 .navbar {
 	position: relative;
@@ -25,7 +21,6 @@ html, body {
 	z-index: 10;
 }
 
-
 .navbar-header {
 	width: 17.5% !important;
 	text-align: center !important;
@@ -35,12 +30,22 @@ html, body {
 	width: 100% !important;
 	margin: auto !important;
 }
-/* 
-.nav, .navbar-nav {
-	position: absolute;
-	width: 100% !important;
-	justify-content: space-around !important;
-} */
+
+.container-fluid {
+	position: relative !important;
+}
+
+.navbar-toggler {
+	position: absolute !important;
+	top: 10px !important;
+	right: 30px !important;
+	width: 30px !important;
+	height: 30px !important;
+    background: url('../images/menu1.png') no-repeat 50% 50%, #222222 !important;	
+	background-size: 100% !important;
+	border: none !important;
+	display: none !important;
+}
 
 main {
 	display: flex;
@@ -114,11 +119,27 @@ footer > .layout-positioner {
 		width: 100%;
 		height: 100%;
 		margin: 0 auto;
-		padding-left: 0px;
-		padding-right: 0px; 
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 
+	.navbar-toggler {
+		display: block !important;
+	}
+
+	/* .nav {
+		border: none !important;
+		margin: none !important;
+	} */
+
+	#collapsibleNavbar {
+		background: #222222 !important;
+		border: none !important;
+		margin: none !important;
+	}
+	
+
 	#scrollTop {
-		display: none;
+		display: none !important;
 	}
 }

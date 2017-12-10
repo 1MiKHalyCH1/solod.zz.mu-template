@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% module Template("head_styles.html", style_name="os-style") %}			
+		{% module Template("head_styles.html", style_name="os-style") %}	
+		<link rel="stylesheet" type="text/css" href="/static/styles/edu-style.css">		
 	</head>
 	<body>
 		{% module Template("header.html") %}
-		<div class="content">
+		<main>
 			<article>
 				<div id="scrollTop"><div id='buttonUp'></div></div>
 				<div class="layout-positioner">
@@ -100,7 +101,7 @@
 					Материалы для практических занятий по bash (<a href="bash">исходники</a> bash).<br>
 				</div>
 			</article>
-		</div>
+		</main>
 		{% module Template("footer.html") %}
 	</body>
 </html>

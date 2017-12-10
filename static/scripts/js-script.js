@@ -1,5 +1,7 @@
 function scrollTop() {
+	$('#scrollTop').fadeOut();	
 	$(window).scroll(function() {
+		// console.log($(this).scrollTop());
 		if($(this).scrollTop() > 46) {
 			$('#scrollTop').fadeIn();
 		} 
@@ -9,6 +11,5 @@ function scrollTop() {
    	});
    	$('#scrollTop').click(function() {
 		   $('body,html').animate({scrollTop:0},400);
-		//    $('#buttonUp').attr("transform", "rotate(180deg)");
    	});
 };

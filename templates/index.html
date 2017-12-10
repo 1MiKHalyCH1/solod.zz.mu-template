@@ -1,55 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% module Template("head_styles.html", style_name="index-style") %}		
+		{% module Template("head_styles.html", style_name="index-style") %}	
 	</head>
 	<body>
 		{% module Template("header.html") %}
-		<div class="content">
-			<article>
-				<div id="scrollTop"><div id='buttonUp'></div></div>					
-				<div class="layout-positioner">
-					<div class="menu-cells">
-						<a class="cell-href" href="/edu/web" title="WEB & DHTML">
-							<div class="cell">
-								<span class="before"></span>
-								<span class="inner">WEB</span>
-							</div>
-						</a>
-						<a class="cell-href" href="/edu/php">
-							<div class="cell">
-								<span class="before"></span>
-								<span class="inner">PHP</span>
-							</div>
-						</a>
-						<a class="cell-href" href="/edu/scripts">
-							<div class="cell">
-								<span class="before"></span>
-								<span class="inner">JS</span>
-							</div>
-						</a>
-						<a class="cell-href" href="/edu/os">
-							<div class="cell">
-								<span class="before"></span>
-								<span class="inner">OS</span>
-							</div>
-						</a>
-						<a class="cell-href" href="/edu/pnm">
-							<div class="cell">
-								<span class="before"></span>
-								<span class="inner">PNM</span>
-							</div>
-						</a>
-						<a class="cell-href" href="/edu/ip">
-							<div class="cell">
-								<span class="before"></span>
-								<span class="inner">IP</span>
-							</div>
-						</a>
+		<main>
+			<div id="scrollTop"><div id='buttonUp'></div></div>	
+			<div class="layout-positioner">				
+				<div class="row">
+					<div class="col-sm-6 col-md-4 cell-out">
+						<a href="/edu/web"><div class="cell-in">WEB</div></a>
+					</div>
+					<div class="col-sm-6 col-md-4 cell-out">
+						<a href="/edu/os"><div class="cell-in">OS</div></a>
+					</div>
+					<div class="col-sm-6 col-md-4 cell-out">
+						<a href="/edu/scripts"><div class="cell-in">JS</div></a>
+					</div>
+					<div class="col-sm-6 col-md-4 cell-out">
+						<a href="/edu/php"><div class="cell-in">PHP</div></a>
+					</div>
+					<div class="col-sm-6 col-md-4 cell-out">
+						<a href="/edu/pnm"><div class="cell-in">PNM</div></a>
+					</div>
+					<div class="col-sm-6 col-md-4 cell-out">
+						<a href="/edu/ip"><div class="cell-in">IP</div></a>
 					</div>
 				</div>
-			</article>
-		</div>
+			</div>
+		</main>
 		{% module Template("footer.html") %}
 	</body>
 </html>

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% module Template("head_styles.html", style_name="biography-style") %}
-		<script type="text/javascript" src="static/scripts/biography-script.js"></script>
+		{% module Template("head.html", style_name="biography-style") %}
+		<script type="text/javascript" src="static/scripts/scripts.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				scroll();
-				rotateArrow();
 			});
 		</script>
 	</head>
@@ -17,14 +16,13 @@
 			<div class="layout-positioner">
 				<!-- Content -->
 
-				<div class="panel-group" id="accordion">
+				<div class="panel-group">
 
 					<div class="panel panel-default">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+						<a data-toggle="collapse" href="#collapse1">
 							<div class="panel-heading">
 								<h1 class="panel-title">ОБРАЗОВАНИЕ</h1>
 								<!-- <div class="arrow"></div> -->
-								<!-- <i class=" icon-chevron-up"></i> -->
 							</div>
 						</a>
 						<div id="collapse1" class="panel-collapse collapse">

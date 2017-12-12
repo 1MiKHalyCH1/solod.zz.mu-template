@@ -50,4 +50,9 @@ main .layout-positioner {
 		padding-right: 0px !important;
 		
 	}
+
+	.panel-body {
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
 }

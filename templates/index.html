@@ -6,26 +6,26 @@
 	<body>
 		{% module Template("header.html") %}
 		<main>
-			<div id="scrollTop"><div id='buttonUp'></div></div>	
+			{% module Template("scroll.html") %}
 			<div class="layout-positioner">				
 				<div class="row">
 					<div class="col-sm-6 col-md-4 cell-out">
-						<a href="/edu/web"><div class="cell-in">WEB</div></a>
+						<a href="/edu/web"><div class="cell-in"><span>WEB</span></div></a>
 					</div>
 					<div class="col-sm-6 col-md-4 cell-out">
-						<a href="/edu/os"><div class="cell-in">OS</div></a>
+						<a href="/edu/os"><div class="cell-in"><span>OS</span></div></a>
 					</div>
 					<div class="col-sm-6 col-md-4 cell-out">
-						<a href="/edu/scripts"><div class="cell-in">JS</div></a>
+						<a href="/edu/scripts"><div class="cell-in"><span>JS</span></div></a>
 					</div>
 					<div class="col-sm-6 col-md-4 cell-out">
-						<a href="/edu/php"><div class="cell-in">PHP</div></a>
+						<a href="/edu/php"><div class="cell-in"><span>PHP</span></div></a>
 					</div>
 					<div class="col-sm-6 col-md-4 cell-out">
-						<a href="/edu/pnm"><div class="cell-in">PNM</div></a>
+						<a href="/edu/pnm"><div class="cell-in" id="pnm-img"><span>PNM</span></div></a>
 					</div>
 					<div class="col-sm-6 col-md-4 cell-out">
-						<a href="/edu/ip"><div class="cell-in">IP</div></a>
+						<a href="/edu/ip"><div class="cell-in"><span>IP</span></div></a>
 					</div>
 				</div>
 			</div>

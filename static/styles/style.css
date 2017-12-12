@@ -4,6 +4,7 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
+	--background-color: #fff;
 }
 
 .layout-positioner {
@@ -21,6 +22,11 @@ html, body {
 	z-index: 10;
 }
 
+.navbar li a {
+	font-family: 'Open Sans', 'Helvetica', sans- !important;
+	font-size: 18px !important;
+}
+
 .navbar-header {
 	width: 17.5% !important;
 	text-align: center !important;
@@ -29,10 +35,12 @@ html, body {
 .navbar-brand {
 	width: 100% !important;
 	margin: auto !important;
+	font-size: 22px !important;
 }
 
 .container-fluid {
 	position: relative !important;
+	padding: 0px !important;
 }
 
 .navbar-toggler {
@@ -50,7 +58,7 @@ html, body {
 main {
 	display: flex;
 	min-height: calc(100vh - 50px - 36px);
-	background: #fff;
+	background: var(--background-color);
 	/* background: #fcfcfc; */
 }
 
@@ -61,7 +69,7 @@ a {
 footer {
 	width: 100%;
 	height: 35px;
-	background: #fff;
+	background: var(--background-color);
 	/* background: #fcfcfc; */
 	color: #525252;
 	text-align: center;
@@ -70,7 +78,7 @@ footer {
 	font-size: 12px;
 }
 
-#scrollTop {
+#scroll-area {
     position: fixed;
     opacity: 0;
     top: 0px;
@@ -78,20 +86,20 @@ footer {
 	width: 10%;
     min-height: 100%;
     transition-property: opacity;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
     font-family: 'Open Sans', 'Helvetica', sans-serif;
     vertical-align: bottom;
 	z-index: 1;
-    
+    display: none;
 }
 
-#scrollTop:hover {
+#scroll-area:hover {
     opacity: 0.7;
 	cursor: pointer;
 	background:  #E5EDF6
 }
 
-#scrollTop #buttonUp {
+#scroll-arrow {
     position: fixed;
     border-radius: 5px;
     bottom: 10px;
@@ -102,7 +110,9 @@ footer {
     background: url('../images/right.png') no-repeat 50% 50%;	
     background-size: 80%;   
     transform: rotate(-90deg);    
-    opacity: 0.6;
+	opacity: 0.4;
+	z-index: 2;
+	display: none;
 }
 
 footer > .layout-positioner {
@@ -119,17 +129,39 @@ footer > .layout-positioner {
 		padding-right: 5px;
 	}
 
+	.navbar {
+		/* position: relative !important; */
+	}
+
 	.navbar-toggler {
 		display: block !important;
 	}
 
-	#collapsibleNavbar {
-		background: #222222 !important;
-		border: none !important;
-		margin: none !important;
+	.navbar-brand {
+		padding-left: 30px !important;
+		font-size: 22px !important;
 	}
-	
-	#scrollTop {
+
+	.navbar-nav li a{
+		padding-left: 30px !important;
+	}
+
+	.navbar-collapse {
+		margin-right: 0px !important;
+		margin-left: 0px !important;
+	}
+
+	#collapsibleNavbar {
+		/* border-top: 0px !important; */
+		/* position: absolute !important; */
+		/* top: 48px !important; */
+		background: #222222 !important;
+		margin: none !important;
+		width: 100% !important;
+	}
+
+
+	#scroll-area, #scroll-arrow {
 		display: none !important;
 	}
 }

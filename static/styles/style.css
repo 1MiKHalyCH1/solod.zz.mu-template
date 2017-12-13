@@ -23,8 +23,12 @@ html, body {
 }
 
 .navbar li a {
-	font-family: 'Open Sans', 'Helvetica', sans- !important;
+	font-family: 'Open Sans', 'Helvetica', sans-serif !important;
 	font-size: 18px !important;
+}
+
+.navbar li {
+	margin-right: 20px !important;
 }
 
 .navbar-header {

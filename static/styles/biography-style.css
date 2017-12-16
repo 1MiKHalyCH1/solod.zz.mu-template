@@ -27,9 +27,10 @@
 }
 
 .panel-heading:hover {
-	background: #F1EEE0;
-	background: #EDE6CE;
-	padding-left: 30px;
+	/* background: #F1EEE0; */
+	background: #EDE6CE !important;
+	padding: 10px 30px !important;
+	
 }
 
 .panel-body {

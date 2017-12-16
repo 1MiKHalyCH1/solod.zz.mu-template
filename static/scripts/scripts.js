@@ -1,7 +1,6 @@
 function scrollTop() {
 	$('#scroll-area').fadeOut();	
 	$(window).scroll(function() {
-		// console.log($(this).scrollTop());
 		if($(this).scrollTop() > 50) { 
 			$('#scroll-area').fadeIn(); 
 		} 
@@ -11,36 +10,24 @@ function scrollTop() {
    	});
    	$('#scroll-area').click(function() {
 			$('body,html').animate({scrollTop:0},400);
-			// console.log($(this).css("background"));
-			// $(this).css("background", "red")
    	});
 };
 
-
-function scroll(){
+function changePanel(){
 	$('.ref-panel').click(function() {
-		$('body,html').animate({ scrollTop: $(this).offset().top - 10 }, 500);
+		console.log($(this).attr("aria-expanded"))
+  		if ($(this).attr("aria-expanded")=="true") {
+			console.log("да");
+			$(this).find(".panel-heading").css({"background":"#fff", "padding":"10px 15px"});
+			
+		} 
+		else { 
+			console.log("нет")
+			$('body,html').animate({ scrollTop: $(this).offset().top - 5 }, 500);
+			$(this).find(".panel-heading").css({"background":"#EDE6CE", "padding":"10px 30px"});
+	 	}
 	});
 }
-
-
-// function changePanel(){
-// 	$('.ref-panel').click(function() {
-// 		console.log($(this).attr("aria-expanded"))
-//   		if ($(this).attr("aria-expanded")!="false") {
-// 			console.log("да");
-// 			$(this > ".change-bg").css("padding-left", "30px !important");
-// 			// console.log($(this > ".change-bg"));
-// 		} 
-// 		else { 
-// 			console.log("нет")
-// 			$(this > ".panel-heading").css({"background":"#fff", "padding-left":"0px"});			
-// 	 	}
-// 	});
-// 	// console.log($('.ref-panel').attr("hover"));
-// 	// $('.ref-panel:hover').css("background", "red");
-
-// }
 
 // function scroll(){
 // 	$("label div").fadeIn(500);

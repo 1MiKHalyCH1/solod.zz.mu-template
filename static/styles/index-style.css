@@ -57,7 +57,7 @@
     justify-content: center;
 	align-items: center; 
 	font-size: 16px;
-	background: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.85);
 	opacity: 0;
 }
 
@@ -82,6 +82,10 @@ main .layout-positioner {
 	padding-bottom: 20px;	
 }
 
+footer .layout-positioner {
+	width: 75%;
+}
+
 
 #pnm-img:hover {
 	color: #D1D1D1;
@@ -91,9 +95,17 @@ main .layout-positioner {
 }
 
 
+#pnm-img:hover .hint {
+	/* color: #D1D1D1; */
+	background-size: 180%;
+	/* filter: blur(5px); */
+}
+
+
 
 @media only screen and (max-width: 768px) {
-	.layout-positioner {
+	.main .layout-positioner {
+		/* width: 100% !important; */
 		padding-top: 5px !important;
 		padding-left: 0px;
 		padding-right: 0px;

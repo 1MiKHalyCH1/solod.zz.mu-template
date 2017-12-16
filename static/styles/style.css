@@ -84,30 +84,30 @@ footer {
 
 #scroll-area {
     position: fixed;
-    opacity: 0;
-    top: 0px;
-    left: 0;
+    top: 0;
+	left: 0;
+	bottom: 0;
 	width: 10%;
-    min-height: 100%;
-    transition-property: opacity;
+    transition-property: background;
     transition-duration: 0.5s;
     font-family: 'Open Sans', 'Helvetica', sans-serif;
     vertical-align: bottom;
 	z-index: 1;
-    display: none;
+	display: none;
+	background: rgba(229, 237, 246, 0);
 }
 
 #scroll-area:hover {
-    opacity: 0.7;
 	cursor: pointer;
-	background:  #E5EDF6
+	background: rgba(229, 237, 246, 0.5);	
 }
 
+
 #scroll-arrow {
-    position: fixed;
+    position: absolute;
     border-radius: 5px;
-    bottom: 10px;
-    left: 10px;
+    bottom: 2%;
+    left: 8%;
     width: 60px;
     height: 60px;
 	/* background: url('../images/right.png') no-repeat 50% 50%, #9EBDDC; */
@@ -115,8 +115,6 @@ footer {
     background-size: 80%;   
     transform: rotate(-90deg);    
 	opacity: 0.4;
-	z-index: 2;
-	display: none;
 }
 
 footer > .layout-positioner {
@@ -126,7 +124,7 @@ footer > .layout-positioner {
 
 @media only screen and (max-width: 768px) {
 	.layout-positioner {
-		width: 100%;
+		width: 100% !important;
 		height: 100%;
 		margin: 0 auto;
 		padding-left: 5px;
@@ -165,7 +163,7 @@ footer > .layout-positioner {
 	}
 
 
-	#scroll-area, #scroll-arrow {
+	#scroll-area {
 		display: none !important;
 	}
 }

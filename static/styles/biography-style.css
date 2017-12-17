@@ -1,20 +1,16 @@
 
-.support {
+#support {
 	color: red;
 }
 
-.panel, .panel-default {
+main .panel {
 	border: none !important;
-	background: #fff !important;
+	background: var(--background-color) !important;
 	border-radius: none !important;
 	box-shadow: none !important;
 }
 
-.panel-body {
-	background: #fff !important;
-}
-
-.panel-heading {
+.panel .panel-heading {
 	position: relative !important;
 	transition-property: padding-left;
 	transition-duration: .5s;
@@ -22,22 +18,36 @@
 	height: 40px !important;
 }
 
-.panel-title {
+.panel .panel-heading .panel-title {
 	font-size: 20px !important;
 }
 
 .panel-heading:hover {
-	/* background: #F1EEE0; */
-	background: #EDE6CE !important;
-	padding: 10px 30px !important;
-	
+	background: var(--hover-color) !important;
+	padding: 10px 2em !important;
 }
 
-.panel-body {
-	padding-left: 30px !important;
-	padding-right: 30px !important;
-	/* border: 1px solid #F1EEE0 !important; */
-	border: 1px solid #EDE6CE !important;
+.panel .panel-collapse .panel-body {
+	background: var(--background-color) !important;
+	padding-left: 2em !important;
+	padding-right: 2em !important;
+	border: 1px solid var(--hover-color) !important;
+}
+
+.panel .panel-heading .arrow {
+	position: absolute;
+    right: 5%;
+	bottom: 1%;
+	top: 1%;
+	margin: auto auto;
+    width: 30px;
+    height: 30px;
+    background: url('../images/right.png') no-repeat 50% 50%;	
+    background-size: 100%;   
+	transform: rotate(90deg);    
+	transition-property: transform;
+	transition-duration: .5s;
+	opacity: 0.7;
 }
 
 
@@ -46,14 +56,18 @@ main .layout-positioner {
 }
 
 @media only screen and (max-width: 768px) {
-	.layout-positioner {
+	main .layout-positioner {
 		padding-left: 0px !important;
 		padding-right: 0px !important;
 		
 	}
 
-	.panel-body {
-		padding-left: 10px !important;
-		padding-right: 10px !important;
+	.panel .panel-collapse .panel-body {
+		padding-left: .5em !important;
+		padding-right: .5em !important;
+	}
+
+	.panel .panel-heading .arrow {
+		display: none;
 	}
 }

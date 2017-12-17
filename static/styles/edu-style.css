@@ -26,3 +26,9 @@ pre {
 .youtube-img:hover {
 	transform: scale(1.3);
 }
+
+@media only screen and (max-width: 768px) {
+	main .layout-positioner {
+		padding: 1em 1em 0 1em !important;
+	}
+}

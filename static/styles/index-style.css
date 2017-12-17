@@ -18,9 +18,6 @@
     justify-content: center; /*Центрирование по горизонтали*/
 	align-items: center; 
 	background: linear-gradient(to top left, #EaE6e0, #EDE6CE);
-	/* background: url('../images/web.jpg') no-repeat 40% 40%, #9EBDDC;	
-	opacity: 0.3;
-	color: white; */
 	height: 100%;
 	width: 100%;
 	border-radius: 0px;
@@ -32,12 +29,12 @@
 
 .cell-in:hover {
 	color: white;
-	background: url('../images/web.jpg') no-repeat 40% 40%, #9EBDDC;	
+	background: url('../images/web.jpg') no-repeat 40% 40%, var(--cell-hover);	
 	opacity: 0.9;
 	background-size: 180%;
-	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	box-shadow: 0 0 4px 1px rgba(0,0,0,0.8);
 	animation: approximation-cell-bg .5s ease 1;
-	/* filter: blur(1px); */
+
 }
 
 @keyframes approximation-cell-bg {
@@ -66,8 +63,11 @@
 	transform: translateY(-30px);
 	transition-property: transform;
 	transition-duration: .5s; 
-	/* filter: blur(2px); */
 }
+
+/* .cell-in:hover .title {
+	text-shadow: 5px 5px 10px purple;
+} */
 
 
 @keyframes appear-hint {
@@ -85,26 +85,40 @@ footer .layout-positioner {
 	width: 75%;
 }
 
-
 #pnm-img:hover {
-	color: #D1D1D1;
-	background: url('../images/pnm.jpg') no-repeat 70% 40%, #9EBDDC;	
+	background: url('../images/pnm.jpg') no-repeat 70% 40%, var(--cell-hover);	
 	background-size: 180%;
-	/* filter: blur(5px); */
 }
 
+#php-img:hover {
+	background: url('../images/code.jpg') no-repeat 55% 100%, var(--cell-hover);	
+	background-size: 180%;
+}
 
+#ip-img:hover {
+	background: url('../images/ip.jpg') no-repeat 43% 80%, var(--cell-hover);	
+	background-size: 180%;
+}
+
+#js-img:hover {
+	background: url('../images/js3.jpg') no-repeat 50% 100%, var(--cell-hover);	
+	background-size: 180%;
+}
+
+#os-img:hover {
+	background: url('../images/linux3.jpg') no-repeat 50% 50%, var(--cell-hover);	
+	background-size: 180%;
+}
+
+/* 
 #pnm-img:hover .hint {
-	/* color: #D1D1D1; */
 	background-size: 180%;
-	/* filter: blur(5px); */
-}
+} */
 
 
 
 @media only screen and (max-width: 768px) {
 	.main .layout-positioner {
-		/* width: 100% !important; */
 		padding-top: 5px !important;
 		padding-left: 0px;
 		padding-right: 0px;

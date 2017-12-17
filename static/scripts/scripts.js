@@ -9,7 +9,7 @@ function scrollTop() {
 	 	}
    	});
    	$('#scroll-area').click(function() {
-			$('body,html').animate({scrollTop:0},400);
+			$('html').animate({scrollTop:0},400);
    	});
 };
 
@@ -17,14 +17,13 @@ function changePanel(){
 	$('.ref-panel').click(function() {
 		console.log($(this).attr("aria-expanded"))
   		if ($(this).attr("aria-expanded")=="true") {
-			console.log("да");
 			$(this).find(".panel-heading").css({"background":"#fff", "padding":"10px 15px"});
-			
+			$(this).find(".arrow").css("transform", "rotate(90deg)");			
 		} 
 		else { 
-			console.log("нет")
-			$('body,html').animate({ scrollTop: $(this).offset().top - 5 }, 500);
-			$(this).find(".panel-heading").css({"background":"#EDE6CE", "padding":"10px 30px"});
+			$('html').animate({ scrollTop: $(this).offset().top - 5 }, 500);
+			$(this).find(".panel-heading").css({"background":"#EDE6CE", "padding":"10px 2em"});
+			$(this).find(".arrow").css("transform", "rotate(-90deg)");			
 	 	}
 	});
 }

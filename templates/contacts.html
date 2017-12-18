@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% module Template("head_styles.html", style_name="contacts-style") %}
+		{% module Template("head.html", style_name="contacts-style") %}
 	</head>
 	<body>
 		{% module Template("header.html") %}
-		<div class="content">
-			<article>
-				<div id="scrollTop"><div id='buttonUp'></div></div>					
-				<div class="layout-positioner">
-					<!--  -->
-					<!-- content -->
-					<!--  -->
-					<img id="contacts-img" src="/static/images/solod.jpg">
-					<br>
-					<p><h1>Солодушкин Святослав Игоревич</h1></p>
-					<br>
-					<p>	Уральский федеральный университет им. Б.Н. Ельцина<br>
-						Институт естественных наук и математики (ИЕНиМ),<br>
-						Доцент кафедры вычислительной математики,<br>
-						Тургенева 4, каб. 613</p>
-					<p>тел. (343)350-75-72</p>
-					<p><img class="vk" src="/static/images/vk.png"> <a id="contacts-href" href="http://vk.com/solodushkin_si" target="_blank">vk.com/solodushkin_si</a></p>
-				</div>
-			</article>
-		</div>
+		<main>
+			{% module Template("scroll.html") %}
+			<div class="layout-positioner">
+				<img id="contacts-img" src="/static/images/solod.jpg">
+				<br>
+				<p><h1>Солодушкин<br>
+					   Святослав<br>
+					   Игоревич</h1></p>
+				<br>
+				<p>	Уральский федеральный университет им. Б.Н. Ельцина<br>
+					Институт естественных наук и математики (ИЕНиМ)<br>
+					Доцент кафедры вычислительной математики<br>
+					Тургенева 4, каб. 613</p>
+				<p><img class="contacts-icon" src="/static/images/phone.png">(343)350-75-72</p>
+				<p><a id="contacts-href" href="http://vk.com/solodushkin_si" target="_blank"><img class="contacts-icon" src="/static/images/vk.png">vk.com/solodushkin_si</a></p>
+				<p><img class="contacts-icon" src="/static/images/mail.png">mail</p>
+				<p><img class="contacts-icon" src="/static/images/telegram.png">telegram</p>				
+				
+			</div>
+		</main>
 		{% module Template("footer.html") %}
 	</body>
 </html>

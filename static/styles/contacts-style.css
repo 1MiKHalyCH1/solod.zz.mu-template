@@ -1,23 +1,40 @@
 #contacts-img {
 	display: block;
 	float: right;
-	/*height: 80%;*/
 	width: 45%;
-	min-width: 300px;
 	margin: 10px;
-	/*margin-right: 20%;*/
-	border-radius: 5px;
-	border: 1px solid black;
+	margin-top: 40px;
+	border-radius: 1px;
 	box-shadow: 2px 2px 5px 2px #BBBBBB;
 }
-
 
 #contacts-href {
 	text-decoration: none;
 	color: black;
 }
 
-.vk {
+.contacts-icon {
 	width: 20px;
 	height: 20px;
+	margin-left: 5px;
+	margin-right: 10px;	
+	transition-property: transform;
+	transition-duration: .4s;
 }
+
+.contacts-icon:hover {
+	transform: scale(1.4);
+}
+
+@media only screen and (max-width: 768px) {
+	.layout-positioner {
+		padding: 1em 1em 0 1em !important;
+	}
+
+	#contacts-img {
+		width: 100%;
+		float: none;
+		margin: 0 auto;
+	}
+}
+

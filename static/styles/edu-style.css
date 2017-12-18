@@ -1,0 +1,34 @@
+main .layout-positioner {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+pre {
+    padding: 10px 50px;
+    color: #333333;
+	background: #F1EEE0;
+    line-height: 120%;
+    border: 1px solid #ac9;
+    border-left: none;
+    border-right: none;
+}
+
+
+.youtube-img {
+	/* width: 24px; */
+	height: 18px;
+	margin-left: 5px;
+	margin-right: 10px;	
+	transition-property: transform;
+	transition-duration: .4s;
+}
+
+.youtube-img:hover {
+	transform: scale(1.3);
+}
+
+@media only screen and (max-width: 768px) {
+	main .layout-positioner {
+		padding: 1em 1em 0 1em !important;
+	}
+}

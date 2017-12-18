@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% module Template("head_styles.html", style_name="publications-style") %}		
+		{% module Template("head.html", style_name="publications-style") %}		
 	</head>
 	<body>
 		{% module Template("header.html") %}
-		<div class="content">
-			<article>
-				<div id="scrollTop"><div id='buttonUp'></div></div>					
-				<div class="layout-positioner">
-					<!-- Content -->
-				</div>
-			</article>
-		</div>
+		<main>
+			{% module Template("scroll.html") %}
+			<div class="layout-positioner">
+				<!-- Content -->
+			</div>
+		</main>
 		{% module Template("footer.html") %}
 	</body>
 </html>

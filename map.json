@@ -1,0 +1,14 @@
+{
+    "": "index.html",
+    "biography": "biography.html",
+    "contacts": "contacts.html",
+    "publications": "publications.html",
+    "edu": {
+        "os": "os.html",
+        "php": "php.html",
+        "scripts": "scripts.html",
+        "web": "web.html",
+        "pnm": "pnm.html",
+        "ip": "ip.html"
+    }
+}

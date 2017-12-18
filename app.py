@@ -1,58 +1,56 @@
 #!/usr/bin/env python3
 
-import os
-
+from json import loads
 from tornado.ioloop import IOLoop
 from tornado.web import RequestHandler, Application
 from tornado.httpserver import HTTPServer
+from copy import deepcopy
 
+import os
 
-class MainHandler(RequestHandler):
+class DefaultHandler(RequestHandler):
+    def initialize(self, template):
+        self.template = template
+
     def get(self):
-        self.render("index.html")
+        self.render(self.template)
 
-class BiographyHandler(RequestHandler):
-    def get(self):
-        self.render("biography.html")
 
-class ContactsHandler(RequestHandler):
-    def get(self):
-        self.render("contacts.html")
+class DirectoryHandler(RequestHandler):
+    def initialize(self, template, children):
+        self.template = template
+        self.children = children
 
-class PublicationsHandler(RequestHandler):
-    def get(self):
-        self.render("publications.html")
-
-class CourseHandler(RequestHandler):
-    def get(self, course_name):
-        courses = ["os", "php", "scripts", "web", "pnm", "ip"] # TODO: load from config
-        
-        if course_name in courses:
-            self.render("edu/{}.html".format(course_name))
+    def get(self, child):
+        if child in self.children:
+            self.render(os.path.join(self.template, self.children[child]))
         else:
-            self.write("There are no course with name '{}'. \n".format(course_name))
-            self.write("Try this:")
-            for e in courses:
-                self.write('<br><a href="{}">{}</a>'.format(*[e]*2))
+            self.write("There are no page with this name in '{}'<br>Try this:<br>".format(self.template))
+            self.write('<br>'.join('<a href="/{}/{}">{}</a>'.format(self.template, k,k) for k in self.children))
 
+
+def generate_sitemap():
+    with open("map.json", "r") as f:
+        sitemap = loads(f.read())
+
+    res = []
+    for name, template in sitemap.items():
+        if type(template) == str:
+            res.append(("/{}".format(name), DefaultHandler, {"template":template}))
+        elif type(template) == dict:
+            res.append(("/{}/(.*)".format(name), DirectoryHandler, {"template":name, "children":template}))
+    return res
 
 class MainApplication(Application):
     def __init__(self):
-        handlers = [
-            (r"/", MainHandler),
-            (r"/biography", BiographyHandler),
-            (r"/edu/(.*)", CourseHandler),
-            (r"/publications", PublicationsHandler),
-            (r"/contacts", ContactsHandler)
-        ]
+        handlers = generate_sitemap()
         settings = {
             "static_path": os.path.join(os.path.dirname(__file__), "static"),
             "template_path": os.path.join(os.path.dirname(__file__), "templates"),
             "debug" : True  #TODO: remove before production
         }
         Application.__init__(self, handlers, **settings)
-        print('[+] Server started')    
-        
+        print('[+] Server started')
 
 if __name__ == "__main__":
     app = HTTPServer(MainApplication())

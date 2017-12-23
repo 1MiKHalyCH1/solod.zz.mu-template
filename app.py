@@ -17,7 +17,7 @@ class DefaultHandler(RequestHandler):
 
 
 class DirectoryHandler(RequestHandler):
-    def initialize(self, template, children):
+    def initialize(self, template, children):        
         self.template = template
         self.children = children
 

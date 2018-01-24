@@ -12,9 +12,6 @@ body, html {
 	height: 100vh;
     justify-content: center;
 	align-items: center;
-	 /*background: url('../static/images/bg.jpg') no-repeat 50% 50%;	 */
-	 /*background-size: 100%;    */
-	 /*filter: grayscale(100%); */
 }
 
 #wrapper-in {

@@ -12,11 +12,9 @@ html, body {
 	--font-family-for-titles: 'Open Sans', 'Helvetica', Arial, Tahoma, Verdana, sans-serif !important;
 }
 
-
 main {
     font-family: var(--font-family-for-text);
 }
-
 
 .layout-positioner {
 	width: 65%;
@@ -112,7 +110,6 @@ footer {
     left: 8%;
     width: 60px;
     height: 60px;
-	/* background: url('../images/right.png') no-repeat 50% 50%, #9EBDDC; */
     background: url('../images/right.png') no-repeat 50% 50%;	
     background-size: 80%;   
     transform: rotate(-90deg);    
@@ -132,7 +129,6 @@ footer > .layout-positioner {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
-
 
 	.navbar-toggler {
 		display: block !important;

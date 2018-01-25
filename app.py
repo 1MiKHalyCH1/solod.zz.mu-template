@@ -12,7 +12,6 @@ from json import loads
 from handlers import *
 
 
-
 def generate_sitemap():
     with open("map.json", "r") as f:
         sitemap = loads(f.read())

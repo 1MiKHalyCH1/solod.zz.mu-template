@@ -8,7 +8,7 @@
 		<main>
 			{% module Template("scroll.html") %}
 			<div class="layout-positioner">
-				<img id="contacts-img" src="/static/images/solod.jpg">
+				<img id="contacts-img" src="{{ static_url('images/solod.jpg') }}">
 				<br>
 				<p><h1>Солодушкин<br>
 					   Святослав<br>
@@ -18,10 +18,10 @@
 					Институт естественных наук и математики (ИЕНиМ)<br>
 					Доцент кафедры вычислительной математики<br>
 					Тургенева 4, каб. 613</p>
-				<p><a href="tel:+73433507572"><img class="contacts-icon" src="/static/images/phone.png">(343)350-75-72</a></p>
-				<p><a href="http://vk.com/solodushkin_si" target="_blank"><img class="contacts-icon" src="/static/images/vk.png">vk.com/solodushkin_si</a></p>
-				<p><img class="contacts-icon" src="/static/images/mail.png">mail</p>
-				<p><img class="contacts-icon" src="/static/images/telegram.png">telegram</p>				
+				<p><a href="tel:+73433507572"><img class="contacts-icon" src="{{ static_url('images/phone.png') }}">(343)350-75-72</a></p>
+				<p><a href="http://vk.com/solodushkin_si" target="_blank"><img class="contacts-icon" src="{{ static_url('images/vk.png') }}">vk.com/solodushkin_si</a></p>
+				<p><img class="contacts-icon" src="{{ static_url('images/mail.png') }}">mail</p>
+				<p><img class="contacts-icon" src="{{ static_url('images/telegram.png') }}">telegram</p>				
 				
 			</div>
 		</main>

@@ -2,7 +2,6 @@
 <html>
 	<head>
 		{% module Template("head.html", style_name="web-style") %}	
-		<link rel="stylesheet" type="text/css" href="/static/styles/edu-style.css">		
 	</head>
 	<body>
 		{% module Template("header.html") %}
@@ -17,9 +16,9 @@
 					<h3>Учебные материалы</h3>
 					Для методического сопровождения курса были подготовлены видеолекции:<br>
 					<a href="https://www.youtube.com/playlist?list=PL_eT4wsRBcCAgTDrZehWvTPRDQ0_7CP-p" target="_blank">
-						<img class="youtube-img" src="/static/images/youtube.png">1-4 лекции</a><br>
+						<img class="youtube-img" src="{{ static_url('images/youtube.png') }}">1-4 лекции</a><br>
 					<a href="https://www.youtube.com/watch?v=Efsp3LBjU_o" target="_blank">
-						<img class="youtube-img" src="/static/images/youtube.png">5 лекция</a><br><br>
+						<img class="youtube-img" src="{{ static_url('images/youtube.png') }}">5 лекция</a><br><br>
 					<a href="web_posob.pdf">Учебное пособие по курсу "Web &amp; DHTML"</a>
 					
 					<h3>1. Основы HTML, языки разметки</h3>

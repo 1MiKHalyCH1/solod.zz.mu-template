@@ -2,7 +2,6 @@
 <html>
 	<head>
 		{% module Template("head.html", style_name="pnm-style") %}
-		<link rel="stylesheet" type="text/css" href="/static/styles/edu-style.css">		
 	</head>
 	<body>
 		{% module Template("header.html") %}
@@ -13,7 +12,7 @@
 					<!-- Content -->
 					
 					<h2>Параллельные вычисления для научных расчетов</h2>
-					<img id="fond-img" src="/static/images/fondpotanin.jpg" alt="Благотвортительный фонд">
+					<img id="fond-img" src="{{ static_url('images/fondpotanin.jpg') }}" alt="Благотвортительный фонд">
 					Курс длится 1 семестр, в конце семестра зачет/экзамен. В неделю 1 лекция.<br>
 					
 					Курс поддержан грантом <a href="http://www.fondpotanin.ru" target="_blank">Благотвортительного фонда </a> В. Потанина <br>

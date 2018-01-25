@@ -2,7 +2,7 @@
 <html>
 	<head>
 		{% module Template("head.html", style_name="publications-style") %}		
-		<script type="text/javascript" src="static/scripts/scripts.js"></script>
+		<script type="text/javascript" src="{{ static_url('scripts/scripts.js') }}"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				changePanel();

@@ -1,24 +1,17 @@
 #!/usr/bin/env python3
 
-from json import loads
+import os.path as ospath
+
+from tornado.options import options, define
 from tornado.ioloop import IOLoop
 from tornado.web import RequestHandler, Application
 from tornado.httpserver import HTTPServer
 from copy import deepcopy
+from json import loads
 
-import os
+from handlers import *
 
-class DefaultHandler(RequestHandler):
-    def initialize(self, template):
-        self.template = template
 
-    def get(self):
-        self.render(self.template)
-
-class Handler404(RequestHandler):
-    def prepare(self):
-        self.set_status(404)
-        self.render('index.html')
 
 def generate_sitemap():
     with open("map.json", "r") as f:
@@ -33,14 +26,17 @@ class MainApplication(Application):
     def __init__(self):
         handlers = generate_sitemap()
         settings = {
-            "static_path": os.path.join(os.path.dirname(__file__), "static"),
-            "template_path": os.path.join(os.path.dirname(__file__), "templates"),
+            "static_path": ospath.join(ospath.dirname(__file__), "static"),
+            "template_path": ospath.join(ospath.dirname(__file__), "templates"),
             "default_handler_class": Handler404
         }
         Application.__init__(self, handlers, **settings)
-        print('[+] Server started')
+        print('[+] Server started at http://{}:{}'.format(options.host, options.port))
 
 if __name__ == "__main__":
+    define("host", default="localhost", help="app host", type=str)
+    define("port", default=8888, help="app port", type=int)
+    
     app = HTTPServer(MainApplication())
-    app.listen(8888)
+    app.listen(options.port)
     IOLoop.instance().start()

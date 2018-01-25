@@ -1,0 +1,69 @@
+
+main .panel {
+	border: none !important;
+	background: var(--background-color) !important;
+	border-radius: none !important;
+	box-shadow: none !important;
+}
+
+.panel .panel-heading {
+	position: relative !important;
+	transition-property: padding-left;
+	transition-duration: .5s;
+	color: black !important;
+	height: 40px !important;
+}
+
+.panel .panel-heading .panel-title {
+	font-size: 20px !important;
+}
+
+.panel-heading:hover {
+	background: var(--hover-color) !important;
+	padding: 10px 2em !important;
+}
+
+.panel .panel-collapse .panel-body {
+	background: var(--background-color) !important;
+	padding-left: 2em !important;
+	padding-right: 2em !important;
+	border: 1px solid var(--hover-color) !important;
+}
+
+.panel .panel-heading .arrow {
+	position: absolute;
+    right: 3%;
+	bottom: 1%;
+	top: 1%;
+	margin: auto auto;
+    width: 30px;
+    height: 30px;
+    background: url('../images/right.png') no-repeat 50% 50%;	
+    background-size: 100%;   
+	transform: rotate(90deg);    
+	transition-property: transform;
+	transition-duration: .5s;
+	opacity: 0.7;
+}
+
+
+main .layout-positioner {
+	padding-top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+	main .layout-positioner {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		
+	}
+
+	.panel .panel-collapse .panel-body {
+		padding-left: .5em !important;
+		padding-right: .5em !important;
+	}
+
+	.panel .panel-heading .arrow {
+		display: none;
+	}
+}

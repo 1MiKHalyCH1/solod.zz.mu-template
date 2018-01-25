@@ -8,13 +8,13 @@ html, body {
 	--navbar-color: #222222;
 	--hover-color: #EDE6CE;
 	--cell-hover: #9EBDDC;
+	--font-family-for-text: Arial, Tahoma, Verdana, sans-serif;
+	--font-family-for-titles: 'Open Sans', 'Helvetica', Arial, Tahoma, Verdana, sans-serif !important;
 }
-
 
 main {
-    font-family: Arial, Tahoma, Verdana, sans-serif;
+    font-family: var(--font-family-for-text);
 }
-
 
 .layout-positioner {
 	width: 65%;
@@ -34,7 +34,7 @@ main {
 }
 
 .navbar li a {
-	font-family: 'Open Sans', 'Helvetica', Arial, Tahoma, Verdana, sans-serif !important;
+	font-family: var(--font-family-for-titles);
 	font-size: 18px !important;
 }
 
@@ -91,7 +91,7 @@ footer {
 	width: 10%;
     transition-property: background;
     transition-duration: 0.5s;
-    font-family: 'Open Sans', 'Helvetica', Arial, Tahoma, Verdana, sans-serif;
+    font-family: var(--font-family-for-titles);
     vertical-align: bottom;
 	z-index: 1;
 	display: none;
@@ -110,7 +110,6 @@ footer {
     left: 8%;
     width: 60px;
     height: 60px;
-	/* background: url('../images/right.png') no-repeat 50% 50%, #9EBDDC; */
     background: url('../images/right.png') no-repeat 50% 50%;	
     background-size: 80%;   
     transform: rotate(-90deg);    
@@ -134,15 +133,100 @@ footer > .layout-positioner {
 	.navbar-toggler {
 		display: block !important;
 		position: absolute !important;
-		top: 10px !important;
+		top: 9px !important;
 		right: 5% !important;
 		width: 30px !important;
 		height: 30px !important;
-		background: url('../images/menu1.png') no-repeat 50% 50%, var(--navbar-color) !important;	
+		padding: 0px !important;
+		background-color: var(--navbar-color) !important; 
 		background-size: 100% !important;
 		border: none !important;
 		outline: 0 !important;
 	}
+
+	#nav-icon-menu {
+		width: 28px;
+		height: 22px;
+		position: relative;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: .5s ease-in-out;
+		-moz-transition: .5s ease-in-out;
+		-o-transition: .5s ease-in-out;
+		transition: .5s ease-in-out;
+		cursor: pointer;
+	  }
+	  
+	 #nav-icon-menu span {
+		margin: 0px;
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: #9d9d9d;
+		border-radius: 3px;
+		opacity: 1;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: .25s ease-in-out;
+		-moz-transition: .25s ease-in-out;
+		-o-transition: .25s ease-in-out;
+		transition: .25s ease-in-out;
+	  }
+
+	  #nav-icon-menu span:nth-child(1) {
+		top: 0px;
+		-webkit-transform-origin: left center;
+		-moz-transform-origin: left center;
+		-o-transform-origin: left center;
+		transform-origin: left center;
+	  }
+	  
+	  #nav-icon-menu span:nth-child(2) {
+		top: 10px;
+		-webkit-transform-origin: left center;
+		-moz-transform-origin: left center;
+		-o-transform-origin: left center;
+		transform-origin: left center;
+	  }
+	  
+	  #nav-icon-menu span:nth-child(3) {
+		bottom: 0px;
+		-webkit-transform-origin: left center;
+		-moz-transform-origin: left center;
+		-o-transform-origin: left center;
+		transform-origin: left center;
+	  }
+	  
+	  #nav-icon-menu.open span:nth-child(1) {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+		top: 0px;
+		left: 4px;
+	  }
+	  
+	  #nav-icon-menu.open span:nth-child(2) {
+		width: 0%;
+		opacity: 0;
+	  }
+	  
+	  #nav-icon-menu.open span:nth-child(3) {
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		bottom: 0px;
+		left: 4px;
+	  }
+	  
+
 
 	.navbar-brand {
 		padding-left: 30px !important;

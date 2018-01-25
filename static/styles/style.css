@@ -291,7 +291,15 @@ footer {
 		box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
 	}
 
+	.navbar li {
+		width: 100%;
+	}
+
 	#scroll-area {
 		display: none !important;
+	}
+
+	#footer-content {
+		width: 100%;
 	}
 }

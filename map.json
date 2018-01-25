@@ -3,6 +3,7 @@
     "biography": "biography.html",
     "contacts": "contacts.html",
     "publications": "publications.html",
+    "news": "news.html",    
     "edu": {
         "os": "os.html",
         "php": "php.html",

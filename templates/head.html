@@ -14,13 +14,13 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script>
     $(document).ready(function(){
-        scrollTop();
-    });
-
-    $(document).ready(function(){
+        scrollTop();        
         $('#nav-icon-menu').click(function(){
             $(this).toggleClass('open');
         });
+        $('.nav.navbar-nav li a[href="' + window.location.pathname + '"]').parent().addClass('active');
+        $('.nav.navbar-right li a[href="' + window.location.pathname + '"]').parent().addClass('active');
+        
     });
 </script>
 

@@ -10,6 +10,8 @@ html, body {
 	--cell-hover: #9EBDDC;
 	--font-family-for-text: Arial, Tahoma, Verdana, sans-serif;
 	--font-family-for-titles: 'Open Sans', 'Helvetica', Arial, Tahoma, Verdana, sans-serif !important;
+	--header-height: 50px;
+	--footer-height: 30px;
 }
 
 main {
@@ -22,6 +24,10 @@ main {
 	margin: 0 auto;
 }
 
+/* #collapsibleNavbar {
+	width: 70%;
+} */
+
 .navbar {
 	position: relative;
 	background: var(--navbar-color) !important;
@@ -29,17 +35,35 @@ main {
 	border: none !important;
 	margin-bottom: 0px !important;
 	padding: 0px !important;
-	height: 40px !important;
+	height: var(--header-height) !important;
 	z-index: 10;
 }
+/* 
+#collapsibleNavbar {
+	width: 60%;
+	display: inline-block;
+}
+
+#additional-navbar {
+	width: 30%;
+	display: inline-block;
+} */
 
 .navbar li a {
 	font-family: var(--font-family-for-titles);
 	font-size: 18px !important;
+	text-align: center;
 }
 
 .navbar li {
-	margin-right: 20px !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 130px;
+}
+
+.navbar .collapse #news:hover {
+	opacity: 1;
 }
 
 .navbar-header {
@@ -62,9 +86,18 @@ main {
 	display: none !important;
 }
 
+#news {
+	width: 30px;
+	height: var(--header-height);
+    background: url('../images/bell.png') no-repeat 50% 50%;	
+	background-size: 80%;
+	margin-right: 20vw;
+	opacity: 0.6;
+}
+
 main {
 	display: flex;
-	min-height: calc(100vh - 50px - 36px);
+	min-height: calc(100vh - var(--header-height) - var(--footer-height));
 	background: var(--background-color);
 }
 
@@ -73,14 +106,25 @@ a {
 }
 
 footer {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
-	height: 35px;
+	height: var(--footer-height);
 	background: var(--background-color);
 	color: #525252;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 35px;
 	font-size: 12px;
+}
+
+#footer-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto auto;	
+	height: 100%;
+	width: 65%;
+	border-top: 1px solid lightgray;
 }
 
 #scroll-area {
@@ -116,11 +160,6 @@ footer {
 	opacity: 0.4;
 }
 
-footer > .layout-positioner {
-	border-top: 1px solid lightgray;
-}
-
-
 @media only screen and (max-width: 768px) {
 	.layout-positioner {
 		width: 100% !important;
@@ -128,6 +167,10 @@ footer > .layout-positioner {
 		margin: 0 auto;
 		padding-left: 5px;
 		padding-right: 5px;
+	}
+
+	.navbar li a {
+		text-align: left;
 	}
 
 	.navbar-toggler {

@@ -12,10 +12,11 @@ body, html {
 	height: 100vh;
     justify-content: center;
 	align-items: center;
+	background: #ffffff;
 }
 
 #wrapper-in {
-	width: 40%;
+	/* width: 40%; */
 	text-align: center;
 	font-family: 'Open Sans', 'Helvetica', Arial, Tahoma, Verdana, sans-serif !important;	
 }
@@ -43,10 +44,16 @@ a {
 	background: #222222;
 	color: #EEEDED;
 	height: 40px;
-	width: 30%;
+	width: 50%;
 	margin: auto auto;
 }
 
 #home:hover {
 	color: #B1AFAF;
+}
+
+@media only screen and (max-width: 768px) {
+	#text-404 {
+		font-size: 100px;
+	}
 }

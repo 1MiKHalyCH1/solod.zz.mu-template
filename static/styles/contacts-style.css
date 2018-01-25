@@ -3,8 +3,7 @@
 	float: right;
 	width: 45%;
 	margin: 10px;
-	margin-top: 40px;
-	border-radius: 1px;
+	border-radius: 2px;
 }
 
 .contacts-icon {
@@ -22,7 +21,7 @@
 
 @media only screen and (max-width: 768px) {
 	main .layout-positioner {
-		padding: 1em 1em 0 1em !important;
+		padding: 1em 1em 0 1em;
 	}
 
 	#contacts-img {

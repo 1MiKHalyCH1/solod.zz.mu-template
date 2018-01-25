@@ -24,9 +24,9 @@ main {
 	margin: 0 auto;
 }
 
-/* #collapsibleNavbar {
-	width: 70%;
-} */
+/* #collapsibleNavbar { */
+	/* width: 70%; */
+/* } */
 
 .navbar {
 	position: relative;
@@ -38,6 +38,10 @@ main {
 	height: var(--header-height) !important;
 	z-index: 10;
 }
+
+/* .nav {
+	display: inline-block;
+} */
 /* 
 #collapsibleNavbar {
 	width: 60%;
@@ -59,7 +63,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 130px;
+	/* width: 150px; */
 }
 
 .navbar .collapse #news:hover {
@@ -91,8 +95,12 @@ main {
 	height: var(--header-height);
     background: url('../images/bell.png') no-repeat 50% 50%;	
 	background-size: 80%;
-	margin-right: 20vw;
 	opacity: 0.6;
+}
+
+#news-bell {
+	width: 30px;
+	margin-right: 19vw;	
 }
 
 main {
@@ -165,8 +173,8 @@ footer {
 		width: 100% !important;
 		height: 100%;
 		margin: 0 auto;
-		padding-left: 5px;
-		padding-right: 5px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	.navbar li a {
@@ -268,6 +276,13 @@ footer {
 		bottom: 0px;
 		left: 4px;
 	  }
+
+	#button-news {
+		position: absolute;
+		width: 30px;
+		right: 100px;
+		top: 0px;
+	}
 	  
 
 

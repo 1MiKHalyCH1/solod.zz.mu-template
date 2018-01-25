@@ -106,10 +106,8 @@ footer .layout-positioner {
 }
 
 @media only screen and (max-width: 768px) {
-	.main .layout-positioner {
-		padding-top: 5px !important;
-		padding-left: 0px;
-		padding-right: 0px;
+	main .layout-positioner {
+		padding: 1em 0 1em 0 !important;
 	}
 
 	.cell-out {

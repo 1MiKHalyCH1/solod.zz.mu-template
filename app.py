@@ -15,19 +15,10 @@ class DefaultHandler(RequestHandler):
     def get(self):
         self.render(self.template)
 
-
-class DirectoryHandler(RequestHandler):
-    def initialize(self, template, children):        
-        self.template = template
-        self.children = children
-
-    def get(self, child):
-        if child in self.children:
-            self.render(os.path.join(self.template, self.children[child]))
-        else:
-            self.write("There are no page with this name in '{}'<br>Try this:<br>".format(self.template))
-            self.write('<br>'.join('<a href="/{}/{}">{}</a>'.format(self.template, k,k) for k in self.children))
-
+class Handler404(RequestHandler):
+    def prepare(self):
+        self.set_status(404)
+        self.render('index.html')
 
 def generate_sitemap():
     with open("map.json", "r") as f:
@@ -35,10 +26,7 @@ def generate_sitemap():
 
     res = []
     for name, template in sitemap.items():
-        if type(template) == str:
-            res.append(("/{}".format(name), DefaultHandler, {"template":template}))
-        elif type(template) == dict:
-            res.append(("/{}/(.*)".format(name), DirectoryHandler, {"template":name, "children":template}))
+        res.append(("/{}".format(name), DefaultHandler, {"template":template}))
     return res
 
 class MainApplication(Application):
@@ -47,7 +35,7 @@ class MainApplication(Application):
         settings = {
             "static_path": os.path.join(os.path.dirname(__file__), "static"),
             "template_path": os.path.join(os.path.dirname(__file__), "templates"),
-            "debug" : True  #TODO: remove before production
+            "default_handler_class": Handler404
         }
         Application.__init__(self, handlers, **settings)
         print('[+] Server started')

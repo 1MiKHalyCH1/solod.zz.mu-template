@@ -3,12 +3,10 @@
     "biography": "biography.html",
     "contacts": "contacts.html",
     "publications": "publications.html",
-    "edu": {
-        "os": "os.html",
-        "php": "php.html",
-        "scripts": "scripts.html",
-        "web": "web.html",
-        "pnm": "pnm.html",
-        "ip": "ip.html"
-    }
+    "os": "edu/os.html",
+    "php": "edu/php.html",
+    "scripts": "edu/scripts.html",
+    "web": "edu/web.html",
+    "pnm": "edu/pnm.html",
+    "ip": "edu/ip.html"
 }

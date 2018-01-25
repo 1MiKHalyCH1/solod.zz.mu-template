@@ -6,37 +6,18 @@
     <body>
         {% module Template("header.html") %}
         <main>
-			{% module Template("scroll.html") %}            
+            {% module Template("scroll.html") %}   
+            {% for n in news %}
             <div class="layout-positioner">
                 <div class="post">
                     <div class="post-title">
-                        Title
-                        <div class="post-date">24.01.18 </div>
+                        {{ escape(n.title) }}
+                        <div class="post-date">{{ n.date }}</div>
                     </div>
-                    <div class="post-body">
-                        Bodykjsndskjdnksjdncksjndcknsdkcnkjnc
-                        sdkjcnsdkjcnskjdcnksjdcnksjdcnkjsdnc
-                        sdlkcOIEFJLAKSMDC[OISLKSAMDCLIMSDCL]
-                        ASLDKASDLKMALDOWIEJF[EIURNGF9WRHF0]ASDLKMASDLMWD
-                        ASLKDJWEIUFNIREUNFLAKMSDO
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="post-title">
-                        Title
-                        <div class="post-date">24.01.18</div>
-                    </div>
-                    <div class="post-body">
-                        Bodykjsndskjdnksjdncksjndcknsdkcnkjnc
-                        sdkjcnsdkjcnskjdcnksjdcnksjdcnkjsdnc
-                        sdlkcOIEFJLAKSMDC[OISLKSAMDCLIMSDCL]
-                        ASLDKASDLKMALDOWIEJF[EIURNGF9WRHF0]ASDLKMASDLMWD
-                        ASLKDJWEIUFNIREUNFLAKMSDO
-                    </div>
-                </div>
-               
-                        
+                    <div class="post-body">{{ n.body }}</div>
+                </div>      
             </div>
+            {% end %}
         </main>
         {% module Template("footer.html") %}        
     </body>

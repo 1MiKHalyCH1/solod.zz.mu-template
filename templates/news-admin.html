@@ -33,6 +33,7 @@
                         <form action="/admin" method="POST">
                             {% module xsrf_form_html() %}                    
                             <input type="submit" value="" id="delete-post">
+                            <input name="id" hidden="hidden" value="{{ n.id }}">
                         </form>
                         <div class="post-date">{{ n.date }}</div>
                     </div>

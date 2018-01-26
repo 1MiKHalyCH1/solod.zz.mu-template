@@ -11,6 +11,7 @@
         {% module Template("scroll.html") %}
         <div class="layout-positioner">
             <form id="admin-post" action="/admin" method="POST">
+                {% module xsrf_form_html() %}
                 <div class="post">
                     <div class="post-title">
                         <input type="text" id="admin-title" name="title" placeholder="Заголовок">
@@ -33,6 +34,7 @@
                     </div>
                     <div class="post-body">{{ escape(n.body) }}</div>
                     <form action="/admin" method="POST">
+                        {% module xsrf_form_html() %}
                         <input name="id" hidden="hidden" value="{{ n.id }}">
                         <button>delete</submit>
                     </form>

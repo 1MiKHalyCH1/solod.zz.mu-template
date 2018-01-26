@@ -1,0 +1,7 @@
+<form action="/login" method="POST">
+    {% module xsrf_form_html() %}    
+    <input name="login">
+    <input name="password">
+    <button>submit</button>
+</form>
+{{ user }}

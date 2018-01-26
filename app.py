@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import os.path as ospath
 import tornado_mysql
 
 from tornado.options import options, define
@@ -12,7 +11,8 @@ from copy import deepcopy
 from json import loads
 
 from handlers import *
-from db import DbNewsHandler
+from config import *
+from db import DbHandler
 
 
 def generate_sitemap():
@@ -26,17 +26,13 @@ def generate_sitemap():
 
 class MainApplication(Application):
     def __init__(self):
-        db_news_handler = DbNewsHandler()
+        db_handler = DbHandler(db_config)
         handlers = generate_sitemap() + [
-            ("/news", NewsHandler, {"db":db_news_handler}),
-            ("/admin", AdminHandler, {"db":db_news_handler})
+            ("/news", NewsHandler, {"db":db_handler}),
+            ("/admin", AdminHandler, {"db":db_handler}),
+            ("/login", LoginHandler, {"db":db_handler})
         ]        
-        settings = {
-            "static_path": ospath.join(ospath.dirname(__file__), "static"),
-            "template_path": ospath.join(ospath.dirname(__file__), "templates"),
-            "default_handler_class": Handler404
-        }
-        Application.__init__(self, handlers, **settings)
+        Application.__init__(self, handlers, default_handler_class=Handler404, **aplication_config)
         print('[+] Server started at http://{}:{}'.format(options.host, options.port))
 
 if __name__ == "__main__":

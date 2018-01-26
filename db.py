@@ -1,7 +1,7 @@
 from tornado import gen
 from tornado_mysql import connect
-from dbconfig import db_config
 from datetime import date
+from bcrypt import checkpw
 
 
 class News:
@@ -12,15 +12,17 @@ class News:
         self.date = d
 
 
-class DbNewsHandler():
-    def __init__(self):
+class DbHandler():
+    def __init__(self, config):
+        self.config = config
         self.SELECT_ALL = "SELECT * FROM news ORDER BY id DESC"
         self.INSERT = "INSERT INTO news(title, body, d) VALUES (%s,%s,%s)"
         self.DELETE = "DELETE FROM news WHERE id=%s"
+        self.LOGIN = "SELECT * FROM users WHERE login LIKE %s LIMIT 1"
 
     @gen.coroutine
     def _start_cursor(self):
-        self.conn = yield connect(**db_config)
+        self.conn = yield connect(**self.config)
         self.cur = self.conn.cursor()
     
     @gen.coroutine
@@ -35,23 +37,29 @@ class DbNewsHandler():
         yield self.cur.execute(self.SELECT_ALL)
         news = [News(*e) for e in self.cur]
         yield self._close_cursor()
-        raise gen.Return(news)
+        return news
 
     @gen.coroutine
     def add_news(self, title, body):
         d = date.today().strftime('%d-%m-%y')
         yield self._start_cursor()
         yield self.cur.execute(self.INSERT, (title,body,d))
-        yield self.cur.execute(self.SELECT_ALL)
-        news = [News(*e) for e in self.cur]
         yield self._close_cursor()
-        raise gen.Return(news)
+        return
 
     @gen.coroutine
     def delete_news(self, id):
         yield self._start_cursor()
         yield self.cur.execute(self.DELETE, (int(id)))
-        yield self.cur.execute(self.SELECT_ALL)
-        news = [News(*e) for e in self.cur]
         yield self._close_cursor()
-        raise gen.Return(news)
+        return
+
+    @gen.coroutine
+    def check_admin(self, login, password):
+        yield self._start_cursor()
+        yield self.cur.execute(self.LOGIN, (login))
+        founded = self.cur.fetchone()
+        yield self._close_cursor()      
+        if not founded: 
+            return False
+        return login == founded[0] and checkpw(password, founded[1])

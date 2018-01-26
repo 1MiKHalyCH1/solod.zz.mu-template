@@ -6,6 +6,13 @@
     <body>
         {% module Template("header.html") %}
         <main>
+            <div class="layout-positioner">
+                <form action="/admin" method="POST">
+                    <input name="title">
+                    <input name="body">
+                    <button>add</submit>                        
+                </form>
+            </div>
             {% module Template("scroll.html") %}   
             {% for n in news %}
             <div class="layout-positioner">
@@ -15,6 +22,10 @@
                         <div class="post-date">{{ n.date }}</div>
                     </div>
                     <div class="post-body">{{ escape(n.body) }}</div>
+                    <form action="/admin" method="POST">
+                        <input name="id" hidden="hidden" value="{{ n.id }}">
+                        <button>delete</submit>
+                    </form>
                 </div>      
             </div>
             {% end %}

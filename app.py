@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 
 import os.path as ospath
+import tornado_mysql
 
 from tornado.options import options, define
 from tornado.ioloop import IOLoop
 from tornado.web import Application
 from tornado.httpserver import HTTPServer
+from tornado import gen
 from copy import deepcopy
 from json import loads
 
 from handlers import *
+from db import DbNewsHandler
 
 
 def generate_sitemap():
@@ -23,7 +26,11 @@ def generate_sitemap():
 
 class MainApplication(Application):
     def __init__(self):
-        handlers = generate_sitemap() + [("/news", NewsHandler)]        
+        db_news_handler = DbNewsHandler()
+        handlers = generate_sitemap() + [
+            ("/news", NewsHandler, {"db":db_news_handler}),
+            ("/admin", AdminHandler, {"db":db_news_handler})
+        ]        
         settings = {
             "static_path": ospath.join(ospath.dirname(__file__), "static"),
             "template_path": ospath.join(ospath.dirname(__file__), "templates"),

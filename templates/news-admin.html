@@ -10,32 +10,34 @@
     <main>
         {% module Template("scroll.html") %}
         <div class="layout-positioner">
-            <form id="admin-post">
+            <form id="admin-post" action="/admin" method="POST">
                 <div class="post">
                     <div class="post-title">
-                        <input type="text" id="admin-title" placeholder="Заголовок">
+                        <input type="text" id="admin-title" name="title" placeholder="Заголовок">
                         <div class="post-date"></div>
                     </div>
                     <div class="post-body">
-                        <textarea id="admin-text" placeholder="Текст..."></textarea>
+                        <textarea id="admin-text" name="body" placeholder="Текст..."></textarea>
                     </div>
                     <div id="functional">
                         <input type="submit" value="Опубликовать" id="button-post">
                     </div>
                 </div>
             </form>
-
-
-            <div class="post">
-                <div class="post-title">
-                    Title
-                    <div class="post-date">24.01.18</div>
-                </div>
-                <div class="post-body">
-                    Bodykjsndskjdnksjdncksjndcknsdkcnkjnc sdkjcnsdkjcnskjdcnksjdcnksjdcnkjsdnc sdlkcOIEFJLAKSMDC[OISLKSAMDCLIMSDCL] ASLDKASDLKMALDOWIEJF[EIURNGF9WRHF0]ASD LKMASDLMWD ASLKDJWEIUFNIREUNFLAKMSDO
-                </div>
-            </div>
-
+            
+            {% for n in news %}
+                <div class="post">
+                    <div class="post-title">
+                        {{ escape(n.title) }}
+                        <div class="post-date">{{ n.date }}</div>
+                    </div>
+                    <div class="post-body">{{ escape(n.body) }}</div>
+                    <form action="/admin" method="POST">
+                        <input name="id" hidden="hidden" value="{{ n.id }}">
+                        <button>delete</submit>
+                    </form>
+                </div>      
+            {% end %}
 
         </div>
     </main>

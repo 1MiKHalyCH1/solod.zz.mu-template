@@ -8,7 +8,5 @@
     "scripts": "edu/scripts.html",
     "web": "edu/web.html",
     "pnm": "edu/pnm.html",
-    "ip": "edu/ip.html",
-    "news": "news.html",
-    "news-admin": "news-admin.html"
+    "ip": "edu/ip.html"
 }

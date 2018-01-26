@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% module Template("head.html", style_name="news-style") %}
+</head>
+
+<body>
+    {% module Template("header.html") %}
+    <main>
+        {% module Template("scroll.html") %}
+        <div class="layout-positioner">
+            <form id="admin-post">
+                <div class="post">
+                    <div class="post-title">
+                        <input type="text" id="admin-title" placeholder="Заголовок">
+                        <div class="post-date"></div>
+                    </div>
+                    <div class="post-body">
+                        <textarea id="admin-text" placeholder="Текст..."></textarea>
+                    </div>
+                    <div id="functional">
+                        <input type="submit" value="Опубликовать" id="button-post">
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="post">
+                <div class="post-title">
+                    Title
+                    <div class="post-date">24.01.18</div>
+                </div>
+                <div class="post-body">
+                    Bodykjsndskjdnksjdncksjndcknsdkcnkjnc sdkjcnsdkjcnskjdcnksjdcnksjdcnkjsdnc sdlkcOIEFJLAKSMDC[OISLKSAMDCLIMSDCL] ASLDKASDLKMALDOWIEJF[EIURNGF9WRHF0]ASD LKMASDLMWD ASLKDJWEIUFNIREUNFLAKMSDO
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+    {% module Template("footer.html") %}
+</body>
+
+</html>

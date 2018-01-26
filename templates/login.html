@@ -1,7 +1,26 @@
-<form action="/login" method="POST">
-    {% module xsrf_form_html() %}    
-    <input name="login">
-    <input name="password">
-    <button>submit</button>
-</form>
-{{ user }}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Solod</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ static_url('images/icon.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('styles/login-style.css') }}">
+</head>
+
+<body>
+    <main>
+        <div id="window">
+            <form action="/login" method="POST">
+                {% module xsrf_form_html() %}
+                <div id="title">Авторизация</div>
+                <input type="login" id="login" name="login" placeholder="Логин">
+                <input type="password" id="password" name="password" placeholder="Пароль">
+                <input type="submit" value="Войти" id="singin">
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

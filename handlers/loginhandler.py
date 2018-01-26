@@ -6,6 +6,7 @@ class LoginHandler(RequestHandler):
         self.db = db
     
     def get(self):
+        self.clear_cookie("admin")
         self.render('login.html', user=self.get_secure_cookie("admin"))
 
     @gen.coroutine
@@ -15,6 +16,6 @@ class LoginHandler(RequestHandler):
         res = yield self.db.check_admin(login, password)
         if res:
             self.set_secure_cookie("admin", login)
-            self.redirect(self.get_argument("next", "/"))
+            self.redirect("/admin")
         else:
             self.redirect("/login")

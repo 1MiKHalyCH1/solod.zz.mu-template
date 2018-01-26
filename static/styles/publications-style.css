@@ -46,10 +46,10 @@ main .panel {
 	opacity: 0.7;
 }
 
-
+/* 
 main .layout-positioner {
 	padding-top: 30px;
-}
+} */
 
 @media only screen and (max-width: 768px) {
 	main .layout-positioner {

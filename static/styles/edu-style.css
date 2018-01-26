@@ -28,6 +28,6 @@ pre {
 
 @media only screen and (max-width: 768px) {
 	main .layout-positioner {
-		padding: 1em 1em 0 1em !important;
+		padding: 1em 1em 0 1em;
 	}
 }

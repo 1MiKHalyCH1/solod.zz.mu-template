@@ -17,7 +17,7 @@ main .layout-positioner {
     width: 100%;
     max-width: 100%;
     min-width: 100%;
-    min-height: 100px;
+    min-height: 80px;
     padding: 5px 10px;
     border: none;
     background: none;
@@ -26,6 +26,23 @@ main .layout-positioner {
 
 #admin-post {
     margin-bottom: 70px;
+}
+
+#delete-post {
+    position: absolute;
+    right: 80px;
+    top: 0px;
+    height: 100%;
+    width: 15px;
+    background: url('../images/delete.png') no-repeat 50% 50%;
+    background-size: 100%;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+#delete-post:hover {
+    opacity: 0.5;
 }
 
 #functional {

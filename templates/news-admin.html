@@ -27,20 +27,18 @@
             </form>
             
             {% for n in news %}
-                <div class="layout-positioner">                    
+                <div class="post">                    
                     <div class="post-title">
                         {{ escape(n.title) }}
+                        <form action="/admin" method="POST">
+                            {% module xsrf_form_html() %}                    
+                            <input type="submit" value="" id="delete-post">
+                        </form>
                         <div class="post-date">{{ n.date }}</div>
                     </div>
                     <div class="post-body">{{ escape(n.body) }}</div>
-                    <form action="/admin" method="POST">
-                        {% module xsrf_form_html() %}
-                        <input name="id" hidden="hidden" value="{{ n.id }}">
-                        <button>delete</submit>
-                    </form>
                 </div>      
             {% end %}
-
         </div>
     </main>
     {% module Template("footer.html") %}
